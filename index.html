@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/Users/1/Downloads/Film%20Maz%20Rayen.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Film Maz Rayen Ultimate v3</title>
+<style>
+body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial}
+header{background:#141414;padding:20px}
+.header-wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.header-title{text-align:left}
+.header-custom{background:#1b1b1b;padding:10px;border-radius:12px;max-width:420px}
+.container{padding:15px}input,select,textarea,button{padding:10px;border-radius:8px;border:none;margin:4px}
+.card{background:#1b1b1b;padding:15px;border-radius:12px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.movie{background:#202020;border-radius:12px;overflow:hidden}.poster{height:220px;background:#333;display:flex;align-items:center;justify-content:center}
+.info{padding:12px}.badge{background:#333;padding:4px 8px;border-radius:8px}
+</style></head><body>
+<header>
+<div class="header-wrap">
+<div class="header-title">
+<h1>🎬 Film Maz Rayen</h1>
+<p>Pencarian Cepat • Filter • Favorit</p>
+</div>
+
+<div class="header-custom">
+<h3>🎨 Kustomisasi Tampilan</h3>
+<input id="bgUrl" placeholder="URL Background dari Google">
+<input type="file" id="bgFile" accept="image/*">
+<button onclick="setBackground()">Ganti Background</button>
+<button onclick="resetBackground()">Reset Background</button>
+<br><br>
+<input id="cursorUrl" placeholder="URL Mouse/Cursor dari Google (.cur/.png)">
+<input type="file" id="cursorFile" accept="image/*,.cur">
+<button onclick="setCursor()">Ganti Mouse</button>
+<button onclick="resetCursor()">Reset Mouse</button>
+</div>
+</div>
+</header>
+<div class="container">
+<div class="card">
+<input id="title" placeholder="Judul Film"><input id="year" type="number" placeholder="Tahun">
+<input id="rating" placeholder="IMDb"><input id="myrating" placeholder="Rating Saya">
+<input id="watchedDate" type="date"><input id="poster" placeholder="URL Poster">
+<select id="genre">
+<option>Action</option><option>Adventure</option><option>Animation</option>
+<option>Biography</option><option>Comedy</option><option>Crime</option>
+<option>Documentary</option><option>Drama</option><option>Family</option>
+<option>Fantasy</option><option>History</option><option>Horror</option>
+<option>Music</option><option>Mystery</option><option>Romance</option>
+<option>Sci-Fi</option><option>Sport</option><option>Thriller</option>
+<option>War</option><option>Western</option><option>Superhero</option>
+<option>Psychological</option><option>Anime</option>
+</select>
+
+<select id="status"><option>Wishlist</option><option>Sedang Ditonton</option><option>Sudah Ditonton</option><option>Drop</option></select>
+<textarea id="note" placeholder="Catatan"></textarea>
+<button onclick="addMovie()">Tambah Film</button>
+</div>
+
+<div class="card">
+<h3>🔎 Cari Film Dalam Koleksi</h3>
+<input id="searchMovie" placeholder="Ketik judul film..." onkeyup="render()">
+<select id="filterStatus" onchange="render()">
+<option value="">Semua Status</option>
+<option>Wishlist</option><option>Sedang Ditonton</option><option>Sudah Ditonton</option><option>Drop</option>
+</select>
+
+<select id="filterGenre" onchange="render()">
+<option value="">Semua Genre</option>
+<option>Action</option><option>Adventure</option><option>Animation</option>
+<option>Biography</option><option>Comedy</option><option>Crime</option>
+<option>Documentary</option><option>Drama</option><option>Family</option>
+<option>Fantasy</option><option>History</option><option>Horror</option>
+<option>Music</option><option>Mystery</option><option>Romance</option>
+<option>Sci-Fi</option><option>Sport</option><option>Thriller</option>
+<option>War</option><option>Western</option><option>Superhero</option>
+<option>Psychological</option><option>Anime</option>
+</select>
+</div>
+
+
+<div id="movies" class="grid"><div class="movie">
+<div class="poster"><img src="./Film Maz Rayen,,_files/jason-x-2001" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="info">
+<h3>jason x</h3>
+<p>📅 - | ⭐ IMDb -</p>
+<p>❤️ -/10</p>
+<p><span class="badge">undefined</span></p>
+<p>🎬 -</p>
+<p>Terdampar di pulau eksotis setelah tragedi di kapal, Sarah membesarkan Richard dan Lilli jauh dari peradaban. Saat kematiannya meninggalkan mereka sendirian, dua remaja itu menemukan cinta dan tantangan baru—termasuk godaan untuk kembali ke dunia luar. Tapi apakah surga mereka yang murni bisa bertahan ketika kapal lain datang? Terkadang, pulau terpencil justru menyimpan rahasia paling berbahaya.</p>
+<button onclick="favMovie(0)">⭐ Favorit</button>
+<button onclick="editMovie(0)">✏️ Edit</button>
+<button onclick="delMovie(0)">🗑️ Hapus</button>
+</div></div><div class="movie">
+<div class="poster"><img src="./Film Maz Rayen,,_files/spider-man-2002" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="info">
+<h3>Spider-Man (2002)</h3>
+<p>📅 2002 | ⭐ IMDb 99</p>
+<p>❤️ 99/10</p>
+<p><span class="badge">undefined</span></p>
+<p>🎬 2006-01-11</p>
+<p>Remaja kutu buku Peter Parker mendapatkan kekuatan laba-laba setelah pengangguranmakhluk genetis. Namun, kekuatan besar datang dengan tanggung jawab besar. Saat Green Goblin, ayah sahabatnya yang gila, meneror kota, Peter harus memakai topeng dan melawan—bahkan jika itu berarti mengorbankan cintanya.</p>
+<button onclick="favMovie(1)">⭐ Favorit</button>
+<button onclick="editMovie(1)">✏️ Edit</button>
+<button onclick="delMovie(1)">🗑️ Hapus</button>
+</div></div></div>
+</div>
+<script>
+const STORAGE_KEY = 'Film Maz Rayen';
+
+// Migrasi otomatis dari database lama
+if (
+    localStorage.getItem('mazrayen_v3') &&
+    !localStorage.getItem(STORAGE_KEY)
+) {
+    localStorage.setItem(
+        STORAGE_KEY,
+        localStorage.getItem('mazrayen_v3')
+    );
+}
+
+let data = JSON.parse(
+    localStorage.getItem(STORAGE_KEY) || '[]'
+);
+
+function save() {
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(data)
+    );
+}
+function addMovie(){
+data.push({title:title.value,year:year.value,rating:rating.value,myrating:myrating.value,date:watchedDate.value,poster:poster.value,genre:genre.value,status:status.value,note:note.value,fav:false});
+save();render();
+}
+function delMovie(i){data.splice(i,1);save();render();}
+function editMovie(i){
+let m=data[i];
+title.value=m.title;year.value=m.year;rating.value=m.rating;myrating.value=m.myrating;
+watchedDate.value=m.date;poster.value=m.poster;genre.value=m.genre||'Action';status.value=m.status;note.value=m.note;
+data.splice(i,1);save();render();
+}
+function favMovie(i){data[i].fav=!data[i].fav;save();render();}
+function render(){
+let q=document.getElementById('searchMovie').value.toLowerCase();
+let fs=document.getElementById('filterStatus').value;
+let fg=document.getElementById('filterGenre').value;
+let arr=data.filter(m=>m.title.toLowerCase().includes(q));
+if(fs) arr=arr.filter(m=>m.status===fs);
+if(fg) arr=arr.filter(m=>m.genre===fg);
+movies.innerHTML=arr.map(m=>{
+let i=data.indexOf(m);
+return `<div class='movie'>
+<div class='poster'>${m.poster?`<img src="${m.poster}" style="width:100%;height:100%;object-fit:cover">`:'🎞️'}</div>
+<div class='info'>
+<h3>${m.fav?'⭐ ':''}${m.title}</h3>
+<p>📅 ${m.year||'-'} | ⭐ IMDb ${m.rating||'-'}</p>
+<p>❤️ ${m.myrating||'-'}/10</p>
+<p><span class='badge'>${m.status}</span></p><p>🎭 ${m.genre||'-'}</p>
+<p>🎬 ${m.date||'-'}</p>
+<p>${m.note||''}</p>
+<button onclick='favMovie(${i})'>⭐ Favorit</button>
+<button onclick='editMovie(${i})'>✏️ Edit</button>
+<button onclick='delMovie(${i})'>🗑️ Hapus</button>
+</div></div>`}).join('');
+}
+render();
+
+const BG_KEY='film_bg';
+const CURSOR_KEY='film_cursor';
+
+function applySavedAppearance(){
+ const bg=localStorage.getItem(BG_KEY);
+ if(bg){
+  document.body.style.backgroundImage=`url(${bg})`;
+  document.body.style.backgroundSize='cover';
+  document.body.style.backgroundAttachment='fixed';
+ }
+ const cur=localStorage.getItem(CURSOR_KEY);
+ if(cur){document.body.style.cursor=`url(${cur}), auto`;}
+}
+function setBackground(){
+ const url=document.getElementById('bgUrl').value.trim();
+ const file=document.getElementById('bgFile').files[0];
+ if(file){
+  const r=new FileReader();
+  r.onload=e=>{
+   localStorage.setItem(BG_KEY,e.target.result);
+   applySavedAppearance();
+  };
+  r.readAsDataURL(file);
+ }else if(url){
+  localStorage.setItem(BG_KEY,url);
+  applySavedAppearance();
+ }
+}
+function resetBackground(){
+ localStorage.removeItem(BG_KEY);
+ document.body.style.backgroundImage='none';
+}
+function setCursor(){
+ const url=document.getElementById('cursorUrl').value.trim();
+ const file=document.getElementById('cursorFile').files[0];
+ if(file){
+  const r=new FileReader();
+  r.onload=e=>{
+   localStorage.setItem(CURSOR_KEY,e.target.result);
+   applySavedAppearance();
+  };
+  r.readAsDataURL(file);
+ }else if(url){
+  localStorage.setItem(CURSOR_KEY,url);
+  applySavedAppearance();
+ }
+}
+function resetCursor(){
+ localStorage.removeItem(CURSOR_KEY);
+ document.body.style.cursor='auto';
+}
+applySavedAppearance();
+
+</script></body></html>
