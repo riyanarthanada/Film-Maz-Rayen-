@@ -1,221 +1,146 @@
-<!DOCTYPE html>
-<!-- saved from url=(0052)file:///C:/Users/1/Downloads/Film%20Maz%20Rayen.html -->
-<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Film Maz Rayen Ultimate v3</title>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Film Maz Rayen</title>
 <style>
-body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial}
-header{background:#141414;padding:20px}
-.header-wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
-.header-title{text-align:left}
-.header-custom{background:#1b1b1b;padding:10px;border-radius:12px;max-width:420px}
-.container{padding:15px}input,select,textarea,button{padding:10px;border-radius:8px;border:none;margin:4px}
-.card{background:#1b1b1b;padding:15px;border-radius:12px;margin-bottom:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.movie{background:#202020;border-radius:12px;overflow:hidden}.poster{height:220px;background:#333;display:flex;align-items:center;justify-content:center}
-.info{padding:12px}.badge{background:#333;padding:4px 8px;border-radius:8px}
-</style></head><body>
-<header>
-<div class="header-wrap">
-<div class="header-title">
-<h1>🎬 Film Maz Rayen</h1>
-<p>Pencarian Cepat • Filter • Favorit</p>
+*{box-sizing:border-box}
+:root{--accent:#fff;--muted:#a9a9ad;--glass:rgba(15,15,18,.68);--line:rgba(255,255,255,.13)}
+body{margin:0;background:#050505;color:#fff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 75% 10%,#454545 0,transparent 30%),linear-gradient(145deg,#171717,#030303 62%);transition:.4s}
+body.custom-bg:before{background-image:var(--custom-bg);background-size:cover;background-position:center;filter:brightness(.38)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{max-width:1450px;margin:auto;padding:18px 34px 55px}
+.topbar{height:46px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;letter-spacing:.5px;font-size:18px}
+.top-actions{display:flex;gap:8px}
+.iconbtn,.ghost{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;border-radius:999px;padding:9px 13px}
+.hero{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(290px,.8fr);gap:18px;margin-top:8px}
+.hero-main{min-height:360px;border-radius:30px;overflow:hidden;position:relative;background:linear-gradient(90deg,#111 5%,transparent 75%),linear-gradient(0deg,rgba(0,0,0,.8),transparent 55%);border:1px solid var(--line)}
+.hero-main.hasimg{background-size:cover;background-position:center}
+.hero-content{position:absolute;left:30px;bottom:28px;max-width:72%}
+.kicker{font-size:13px;color:#ddd;margin-bottom:6px}
+h1{font-size:clamp(28px,4vw,52px);line-height:1;margin:0 0 12px}
+.hero-meta{color:#ddd;font-size:13px}
+.play{margin-top:18px;border:0;border-radius:50%;width:58px;height:58px;background:#fff;color:#111;font-size:24px}
+.side{background:var(--glass);border:1px solid var(--line);border-radius:28px;padding:20px;backdrop-filter:blur(16px)}
+.side h3{margin:0 0 15px}
+.mini{display:flex;gap:12px;align-items:center;padding:9px;border-radius:15px}
+.mini:hover{background:rgba(255,255,255,.07)}
+.mini-poster{width:70px;height:48px;border-radius:9px;background:linear-gradient(135deg,#4a4a4a,#151515);background-size:cover;background-position:center;flex:none}
+.mini-info{min-width:0}.mini-title{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mini-meta{font-size:11px;color:var(--muted);margin-top:4px}
+.section{margin-top:22px}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.section-head h2{font-size:18px;margin:0}
+.genrebar{display:flex;gap:8px;overflow:auto;padding-bottom:3px}.pill{white-space:nowrap;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#ddd;border-radius:999px;padding:8px 13px}.pill.active{background:#fff;color:#111}
+.trending{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(145px,1fr);grid-template-rows:1fr;gap:13px;overflow-x:auto;padding-bottom:7px}
+.poster-card{min-width:145px;height:220px;border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(145deg,#444,#111);border:1px solid var(--line);cursor:pointer}
+.poster-card .poster-img{position:absolute;inset:0;background-size:cover;background-position:center}
+.poster-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent 55%)}
+.poster-title{position:absolute;z-index:2;bottom:12px;left:11px;right:11px;font-size:13px;font-weight:800;line-height:1.15}
+.poster-year{position:absolute;z-index:2;top:9px;left:9px;font-size:10px;background:rgba(0,0,0,.65);padding:5px 7px;border-radius:8px}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap}.search{flex:1;min-width:230px}.search,input,select,textarea{background:#101014;color:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 13px;outline:none}.library{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px}.rowcard{background:rgba(16,16,19,.78);border:1px solid var(--line);border-radius:17px;padding:14px;cursor:pointer}.rowcard:hover{border-color:rgba(255,255,255,.35);transform:translateY(-2px);transition:.15s}.rowtitle{font-weight:800}.rowmeta{font-size:12px;color:var(--muted);margin-top:6px}.tag{display:inline-block;margin-top:9px;margin-right:5px;font-size:10px;color:#ddd;background:#252529;border-radius:999px;padding:4px 7px}
+dialog{width:min(650px,92vw);border:1px solid var(--line);border-radius:22px;background:#111;color:#fff;padding:0;box-shadow:0 25px 100px #000}
+dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(5px)}
+.detail{padding:24px}.detail-poster{height:250px;border-radius:16px;background:linear-gradient(135deg,#333,#111);background-size:cover;background-position:center;margin-bottom:18px}.detail h2{margin:0 0 7px;font-size:30px}.detail-meta{color:#aaa}.detail-note{white-space:pre-wrap;background:#18181c;border-radius:13px;padding:13px;margin:15px 0;color:#ddd;line-height:1.5}.detail-links{display:flex;gap:8px;flex-wrap:wrap}.detail-links a{color:#111;background:#fff;text-decoration:none;padding:10px 13px;border-radius:11px;font-weight:700}
+.form{padding:24px;display:grid;gap:12px}.form h2{margin:0}.form label{display:grid;gap:6px;color:#aaa;font-size:13px}.form button{background:#fff;color:#111;border:0;border-radius:11px;padding:12px;font-weight:800}
+.filebtn{display:inline-block;background:#fff;color:#111;border-radius:999px;padding:9px 13px;font-size:13px;font-weight:700;cursor:pointer}.filebtn input{display:none}
+.empty{padding:30px;color:#999;text-align:center}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.side{display:none}.hero-main{min-height:320px}.wrap{padding:14px 16px 45px}}
+@media(max-width:520px){.trending{grid-auto-columns:130px}.poster-card{height:195px}.library{grid-template-columns:repeat(2,minmax(0,1fr))}.rowcard{padding:11px}.hero-content{left:20px;bottom:20px;max-width:90%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="topbar">
+<div class="brand">FILM MAZ RAYEN</div>
+<div class="top-actions">
+<label class="filebtn">🎨 Ganti Background<input id="bgFile" type="file" accept="image/*"></label>
+<button class="iconbtn" id="resetBg">Reset</button>
+</div>
 </div>
 
-<div class="header-custom">
-<h3>🎨 Kustomisasi Tampilan</h3>
-<input id="bgUrl" placeholder="URL Background dari Google">
-<input type="file" id="bgFile" accept="image/*">
-<button onclick="setBackground()">Ganti Background</button>
-<button onclick="resetBackground()">Reset Background</button>
-<br><br>
-<input id="cursorUrl" placeholder="URL Mouse/Cursor dari Google (.cur/.png)">
-<input type="file" id="cursorFile" accept="image/*,.cur">
-<button onclick="setCursor()">Ganti Mouse</button>
-<button onclick="resetCursor()">Reset Mouse</button>
+<section class="hero">
+<div class="hero-main" id="hero">
+<div class="hero-content"><div class="kicker" id="heroYear"></div><h1 id="heroTitle">Film Maz Rayen</h1><div class="hero-meta" id="heroMeta"></div><button class="play" id="heroPlay">▶</button></div>
 </div>
-</div>
-</header>
-<div class="container">
-<div class="card">
-<input id="title" placeholder="Judul Film"><input id="year" type="number" placeholder="Tahun">
-<input id="rating" placeholder="IMDb"><input id="myrating" placeholder="Rating Saya">
-<input id="watchedDate" type="date"><input id="poster" placeholder="URL Poster">
-<select id="genre">
-<option>Action</option><option>Adventure</option><option>Animation</option>
-<option>Biography</option><option>Comedy</option><option>Crime</option>
-<option>Documentary</option><option>Drama</option><option>Family</option>
-<option>Fantasy</option><option>History</option><option>Horror</option>
-<option>Music</option><option>Mystery</option><option>Romance</option>
-<option>Sci-Fi</option><option>Sport</option><option>Thriller</option>
-<option>War</option><option>Western</option><option>Superhero</option>
-<option>Psychological</option><option>Anime</option>
-</select>
+<div class="side"><h3>Now watching</h3><div id="nowList"></div></div>
+</section>
 
-<select id="status"><option>Wishlist</option><option>Sedang Ditonton</option><option>Sudah Ditonton</option><option>Drop</option></select>
-<textarea id="note" placeholder="Catatan"></textarea>
-<button onclick="addMovie()">Tambah Film</button>
+<section class="section"><div class="section-head"><h2>Find by genre</h2></div><div class="genrebar" id="genres"></div></section>
+
+<section class="section"><div class="section-head"><h2>Trending</h2><span id="count" class="rowmeta"></span></div><div class="trending" id="trending"></div></section>
+
+<section class="section">
+<div class="section-head"><h2>All movies</h2></div>
+<div class="toolbar"><input class="search" id="search" placeholder="Cari film dalam koleksi..."><select id="status"><option value="">Semua Status</option><option value="watched">Sudah ditonton</option><option value="unwatched">Belum ditonton</option></select><select id="sort"><option value="az">Judul A-Z</option><option value="za">Judul Z-A</option><option value="year">Tahun terbaru</option><option value="rating">Rating tertinggi</option></select><button class="ghost" id="add">＋ Tambah Film</button></div>
+<div id="library" class="library" style="margin-top:13px"></div>
+</section>
 </div>
 
-<div class="card">
-<h3>🔎 Cari Film Dalam Koleksi</h3>
-<input id="searchMovie" placeholder="Ketik judul film..." onkeyup="render()">
-<select id="filterStatus" onchange="render()">
-<option value="">Semua Status</option>
-<option>Wishlist</option><option>Sedang Ditonton</option><option>Sudah Ditonton</option><option>Drop</option>
-</select>
+<dialog id="detailDlg"><div class="detail"><button class="ghost" onclick="detailDlg.close()" style="float:right">✕</button><div id="detailPoster" class="detail-poster"></div><h2 id="dTitle"></h2><div id="dMeta" class="detail-meta"></div><div id="dGenres"></div><div id="dNote" class="detail-note"></div><div class="detail-links" id="dLinks"></div><button class="ghost" id="dEdit" style="margin-top:14px">✏ Edit Film</button></div></dialog>
 
-<select id="filterGenre" onchange="render()">
-<option value="">Semua Genre</option>
-<option>Action</option><option>Adventure</option><option>Animation</option>
-<option>Biography</option><option>Comedy</option><option>Crime</option>
-<option>Documentary</option><option>Drama</option><option>Family</option>
-<option>Fantasy</option><option>History</option><option>Horror</option>
-<option>Music</option><option>Mystery</option><option>Romance</option>
-<option>Sci-Fi</option><option>Sport</option><option>Thriller</option>
-<option>War</option><option>Western</option><option>Superhero</option>
-<option>Psychological</option><option>Anime</option>
-</select>
-</div>
+<dialog id="formDlg"><form class="form" id="filmForm"><h2 id="formTitle">Tambah Film</h2><label>Nama film<input id="fTitle" required></label><label>Tahun<input id="fYear" type="number"></label><label>Rating<input id="fRating" type="number" min="0" max="10" step=".1"></label><label>Genre<input id="fGenre" placeholder="ACTION, HORROR"></label><label>Waktu nonton<input id="fWatchDate" placeholder="Contoh: 17 September 2026"></label><label>Link tempat nonton<input id="fWatchLink" type="url" placeholder="https://..."></label><label>Link gambar film<input id="fImageLink" type="url" placeholder="https://..."></label><label>Franchise<input id="fFranchise"></label><label>Catatan<textarea id="fNote" placeholder="Isi catatan film di sini..."></textarea></label><button type="submit">Simpan Film</button><button type="button" class="ghost" onclick="formDlg.close()">Batal</button></form></dialog>
 
-
-<div id="movies" class="grid"><div class="movie">
-<div class="poster"><img src="./Film Maz Rayen,,_files/jason-x-2001" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="info">
-<h3>jason x</h3>
-<p>📅 - | ⭐ IMDb -</p>
-<p>❤️ -/10</p>
-<p><span class="badge">undefined</span></p>
-<p>🎬 -</p>
-<p>Terdampar di pulau eksotis setelah tragedi di kapal, Sarah membesarkan Richard dan Lilli jauh dari peradaban. Saat kematiannya meninggalkan mereka sendirian, dua remaja itu menemukan cinta dan tantangan baru—termasuk godaan untuk kembali ke dunia luar. Tapi apakah surga mereka yang murni bisa bertahan ketika kapal lain datang? Terkadang, pulau terpencil justru menyimpan rahasia paling berbahaya.</p>
-<button onclick="favMovie(0)">⭐ Favorit</button>
-<button onclick="editMovie(0)">✏️ Edit</button>
-<button onclick="delMovie(0)">🗑️ Hapus</button>
-</div></div><div class="movie">
-<div class="poster"><img src="./Film Maz Rayen,,_files/spider-man-2002" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="info">
-<h3>Spider-Man (2002)</h3>
-<p>📅 2002 | ⭐ IMDb 99</p>
-<p>❤️ 99/10</p>
-<p><span class="badge">undefined</span></p>
-<p>🎬 2006-01-11</p>
-<p>Remaja kutu buku Peter Parker mendapatkan kekuatan laba-laba setelah pengangguranmakhluk genetis. Namun, kekuatan besar datang dengan tanggung jawab besar. Saat Green Goblin, ayah sahabatnya yang gila, meneror kota, Peter harus memakai topeng dan melawan—bahkan jika itu berarti mengorbankan cintanya.</p>
-<button onclick="favMovie(1)">⭐ Favorit</button>
-<button onclick="editMovie(1)">✏️ Edit</button>
-<button onclick="delMovie(1)">🗑️ Hapus</button>
-</div></div></div>
-</div>
 <script>
-const STORAGE_KEY = 'Film Maz Rayen';
-
-// Migrasi otomatis dari database lama
-if (
-    localStorage.getItem('mazrayen_v3') &&
-    !localStorage.getItem(STORAGE_KEY)
-) {
-    localStorage.setItem(
-        STORAGE_KEY,
-        localStorage.getItem('mazrayen_v3')
-    );
+const initial=[{"id": 1, "title": "BLUE LOCK", "year": 2022.0, "rating": "10", "watchDate": "", "genre": "ANIME, SPORT", "note": "Anime tentang Sepakbola dan masing masing mereka mempunyai skill  masing2. tokoh utamanya Isagi", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 2, "title": "Classroom of the Elite", "year": 2017.0, "rating": 10.0, "watchDate": "", "genre": "ANIME, SPORT", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 3, "title": "The Avengers (1998)", "year": 1998.0, "rating": 8.0, "watchDate": "", "genre": "ACTION, CRIME", "note": "Agen rahasia Inggris John Steed ditugaskan untuk menyelidiki rencana jahat Sir August de Wynter, yang ingin menguasai dunia dengan mesin pengendali cuaca. Steed terpikat oleh sosok misterius Dr. Emma Peel, satu-satunya tersangka, namun justru bersekutu dengannya untuk menggagalkan rencana Sir August. Dengan gaya retro dan petualangan seru", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 4, "title": "Final Destination (2000)", "year": 2000.0, "rating": 9.0, "watchDate": "", "genre": "HORROR", "note": "Mati di awal di Pesawat", "franchise": "FINAL DESTINATION", "watchLink": "", "imageLink": ""}, {"id": 5, "title": "Final Destination 2 (2003)", "year": 2003.0, "rating": "9", "watchDate": "", "genre": "HORROR", "note": "Kecelakaan Maut di Jalan Raya", "franchise": "FINAL DESTINATION", "watchLink": "", "imageLink": ""}, {"id": 6, "title": "Final Destination 3 (2006)", "year": 2006.0, "rating": "9", "watchDate": "", "genre": "HORROR", "note": "Awal meniggal di Roller Coaster", "franchise": "FINAL DESTINATION", "watchLink": "", "imageLink": ""}, {"id": 7, "title": "The Final Destination (2009)", "year": 2009.0, "rating": "9", "watchDate": "", "genre": "HORROR", "note": "Awal meninggal nonton Mobil Balap", "franchise": "FINAL DESTINATION", "watchLink": "", "imageLink": ""}, {"id": 8, "title": "Final Destination 5 (2011)", "year": 2011.0, "rating": "9", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "FINAL DESTINATION", "watchLink": "", "imageLink": ""}, {"id": 9, "title": "Final Destination: Bloodlines (2025)", "year": 2025.0, "rating": "9", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "FINAL DESTINATION", "watchLink": "", "imageLink": ""}, {"id": 10, "title": "Saw (2004)", "year": 2004.0, "rating": "9", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 11, "title": "Saw II (2005)", "year": 2005.0, "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 12, "title": "Saw III (2006)", "year": 2006.0, "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 13, "title": "Saw IV (2007)", "year": 2007.0, "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 14, "title": "Saw V (2008)", "year": 2008.0, "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 15, "title": "Saw VI (2009)", "year": 2009.0, "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 16, "title": "Saw 3D: The Final Chapter (Saw 3D) (2010)", "year": "", "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 17, "title": "Jigsaw (2017)", "year": 2017.0, "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 18, "title": "Spiral (Spiral: From the Book of Saw) (2021)", "year": 2021.0, "rating": "", "watchDate": "", "genre": "HORROR", "note": "Kisah tentang seorang Polisi kulit Hitam. pembunuhannya ada lidah terpotong sambil ditabrak kereta..\nada Polisi putih jarinya diputuskan.\n\nhttps://chatgpt.com/share/6a4f2780-e2ac-83ec-b236-ca5ae31d5cf5", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 19, "title": "Saw X (2023)", "year": 2023.0, "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "SAW", "watchLink": "", "imageLink": ""}, {"id": 20, "title": "Despicable Me (2010)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 21, "title": "Despicable Me 2 (2013)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 22, "title": "Despicable Me 3 (2017)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 23, "title": "Despicable Me 4 (2024)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 24, "title": "Despicable Me 2: 3 Mini-Movie Collection (2014)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 25, "title": "Minions (2015)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 26, "title": "Mower Minions (2016)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 27, "title": "Minion Scouts (2019)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 28, "title": "Minions Holiday Special (2020)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 29, "title": "Minions & More 1", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 30, "title": "Minions: The Rise of Gru (2022)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 31, "title": "Minions & Monsters (2026)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 32, "title": "Halloween (1978)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 33, "title": "Halloween II (1981)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 34, "title": "Halloween III: Season of the Witch (1982)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 35, "title": "Halloween 4: The Return of Michael Myers (1988)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 36, "title": "Halloween 5: The Revenge of Michael Myers (1989)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 37, "title": "Halloween: The Curse of Michael Myers (1995)", "year": "", "rating": "", "watchDate": "", "genre": "HALLOWEEN, HORROR", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 38, "title": "Halloween H20: 20 Years Later (1998)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 39, "title": "Halloween: Resurrection (2002)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 40, "title": "Halloween (2007)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 41, "title": "Halloween II (2009)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 42, "title": "Halloween (2018)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 43, "title": "Halloween Kills (2021)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "HALLOWEEN", "watchLink": "", "imageLink": ""}, {"id": 44, "title": "SpongeBob SquarePants Series (1999)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "SPONGEBOB", "watchLink": "", "imageLink": ""}, {"id": 45, "title": "The Green Mile (1999)", "year": "", "rating": 10.0, "watchDate": "", "genre": "", "note": "Di penjara Louisiana tahun 1930-an, para sipir Death Row terkejut ketika salah satu narapidana, John Coffey, ternyata memiliki kekuatan ajaib yang mengubah hidup mereka selamanya. Di antara keadilan dan mukjizat, bisakah mereka menyelamatkan jiwa yang salah dihukum?", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 46, "title": "Luke Cage (TV series) (2016)", "year": "", "rating": "", "watchDate": "", "genre": "ACTION", "note": "", "franchise": "MARVEL", "watchLink": "", "imageLink": ""}, {"id": 47, "title": "Serial The Defenders (2017)\n\nhttps://z2.idlixku.com/series/marvels-the-defenders-2017", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "MARVEL", "watchLink": "", "imageLink": ""}, {"id": 48, "title": "Spirited Away (2001)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 49, "title": "Hunter × Hunter (2011)", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 50, "title": "X-Men (2000)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Musuhnya Magneto dan wolverine baru mmasuk", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 51, "title": "X-Men 2 (X2) (2003)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Musuhnya william stryker", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 52, "title": "X-Men: The Last Stand (2006)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "musuhnya Dark Phoenix dan Magneto", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 53, "title": "X-Men Origins: Wolverine (2009)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "musuhnya Sabretooth dan William Stryker. Membahasa masa lalu Wolverine", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 54, "title": "X-Men: First Class (X: First Class) (2011)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Musuhnya sebastian Shaw", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 55, "title": "The Wolverine (2013)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Wolverine ke Jepang", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 56, "title": "Deadpool & Wolverine (2024)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 57, "title": "X-Men: Days of Future Past (2014)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Wolverine ke masa lalu untuk menghentikan pembuatan sentinel", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 58, "title": "X-Men: Apocalypse (2016)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "musuhnya Apocalypse", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 59, "title": "Logan (2017)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "musuhnya x-24", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 60, "title": "Dark Phoenix (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "X-MEN", "watchLink": "", "imageLink": ""}, {"id": 61, "title": "Back to the Future (1985)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 62, "title": "Back to the Future Part II (1989)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 63, "title": "Back to the Future Part III (1990)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 64, "title": "My Hero Academia", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 65, "title": "Attack on Titan", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 66, "title": "JoJo's Bizarre Adventure", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 67, "title": "The Seven Deadly Sins\n2014", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 68, "title": "The Seven Deadly Sins: Four Knights of the Apocalypse", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "Anak anak dari Seven Deadly Sins", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 69, "title": "shokugeki no souma", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 70, "title": "HAIKYU", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 71, "title": "kuroko no basket", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 72, "title": "Toy Story (1995)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "PIXAR", "watchLink": "", "imageLink": ""}, {"id": 73, "title": "Toy Story 2 (1999)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "PIXAR", "watchLink": "", "imageLink": ""}, {"id": 74, "title": "Toy Story 3 (2010)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "PIXAR", "watchLink": "", "imageLink": ""}, {"id": 75, "title": "Toy Story of Terror (2013)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "PIXAR", "watchLink": "", "imageLink": ""}, {"id": 76, "title": "Toy Story That Time Forgot (2014)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "PIXAR", "watchLink": "", "imageLink": ""}, {"id": 77, "title": "Toy Story 4 (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "PIXAR", "watchLink": "", "imageLink": ""}, {"id": 78, "title": "Toy Story 5 (2026)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "PIXAR", "watchLink": "", "imageLink": ""}, {"id": 79, "title": "one punch man", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 80, "title": "ONE PIECE\n\nhttps://www.bilibili.tv/id/play/37976/10346615?bstar_from=bstar-web.pgc-video-detail.episode.all", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 81, "title": "BLEACH", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 82, "title": "FAIRY TAIL", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 83, "title": "Fairy Tail 100 years quest", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 84, "title": "Maleficent (2014)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 85, "title": "Maleficent: Mistress of Evil (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 86, "title": "Weapons (2025)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 87, "title": "The SpongeBob SquarePants Movie (2004)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "SPONGEBOB", "watchLink": "", "imageLink": ""}, {"id": 88, "title": "The SpongeBob Movie: Sponge Out of Water (2015)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "SPONGEBOB", "watchLink": "", "imageLink": ""}, {"id": 89, "title": "The SpongeBob Movie: Sponge on the Run (2020)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "SPONGEBOB", "watchLink": "", "imageLink": ""}, {"id": 90, "title": "SpongeBob SquarePants: Sea Side Story (2017)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "SPONGEBOB", "watchLink": "", "imageLink": ""}, {"id": 91, "title": "Saving Bikini Bottom: The Sandy Cheeks Movie (2024)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "SPONGEBOB", "watchLink": "", "imageLink": ""}, {"id": 92, "title": "Plankton: The Movie", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "SPONGEBOB", "watchLink": "", "imageLink": ""}, {"id": 93, "title": "The SpongeBob Movie: Search for SquarePants", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "SPONGEBOB", "watchLink": "", "imageLink": ""}, {"id": 94, "title": "Santa's Little Helpers (2019) MINION", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "ILLUMINATION", "watchLink": "", "imageLink": ""}, {"id": 95, "title": "The Smurfs (2011)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 96, "title": "The Smurfs 2 (2013)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 97, "title": "The Smurfs: A Christmas Carol (2011)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 98, "title": "The Smurfs: The Legend of Smurfy Hollow (2013)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 99, "title": "Smurfs: The Lost Village (2017)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 100, "title": "Smurfs (2025)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 101, "title": "YuYu Hakusho (1992)", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 102, "title": "Assassination Classroom (2013)", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 103, "title": "Tom and Jerry: Forbidden Compass (2025)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 104, "title": "Tom and Jerry: Snowman's Land (2022)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 105, "title": "Tom and Jerry: Cowboy Up! (2022)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 106, "title": "Tom and Jerry (2021)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 107, "title": "Tom and Jerry: Willy Wonka and the Chocolate Factory (2017)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 108, "title": "Tom and Jerry: Spy Quest (2015)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 109, "title": "Tom and Jerry Meet Sherlock Holmes (2010)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 110, "title": "Tom and Jerry: The Fast and the Furry (2005)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 111, "title": "Nonton Tom and Jerry's Giant Adventure (2013)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 112, "title": "Tom and Jerry: Robin Hood and His Merry Mouse (2012)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 113, "title": "Tom and Jerry Blast Off to Mars! (2005)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 114, "title": "Tom and Jerry & The Wizard of Oz (2011)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 115, "title": "Tom and Jerry: The Lost Dragon (2014)", "year": "", "rating": "", "watchDate": "", "genre": "ANIMATION", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 116, "title": "The Black Phone\n2021", "year": "", "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 117, "title": "Mob Psycho 100", "year": "", "rating": "", "watchDate": "", "genre": "ANIME", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 118, "title": "Sinister\n2012", "year": "", "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 119, "title": "Sinister 2\n2015", "year": "", "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 120, "title": "All of Us Are Dead", "year": "", "rating": "", "watchDate": "", "genre": "HORROR", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 121, "title": "Scream (1996)", "year": "", "rating": "", "watchDate": "", "genre": "HORROR, SCREAM", "note": "", "franchise": "SCREAM", "watchLink": "", "imageLink": ""}, {"id": 122, "title": "Scream 2 (1997)", "year": "", "rating": "", "watchDate": "", "genre": "HORROR, SCREAM", "note": "", "franchise": "SCREAM", "watchLink": "", "imageLink": ""}, {"id": 123, "title": "Scream 3 (2000)", "year": "", "rating": "", "watchDate": "", "genre": "HORROR, SCREAM", "note": "", "franchise": "SCREAM", "watchLink": "", "imageLink": ""}, {"id": 124, "title": "Scream 4 (2011)", "year": "", "rating": "", "watchDate": "", "genre": "HORROR, SCREAM", "note": "", "franchise": "SCREAM", "watchLink": "", "imageLink": ""}, {"id": 125, "title": "Scream (2022)", "year": "", "rating": "", "watchDate": "", "genre": "HORROR, SCREAM", "note": "", "franchise": "SCREAM", "watchLink": "", "imageLink": ""}, {"id": 126, "title": "Scream VI (2023)", "year": "", "rating": "", "watchDate": "", "genre": "HORROR, SCREAM", "note": "", "franchise": "SCREAM", "watchLink": "", "imageLink": ""}, {"id": 127, "title": "Scream 7 (2026)", "year": "", "rating": "", "watchDate": "", "genre": "HORROR, SCREAM", "note": "", "franchise": "SCREAM", "watchLink": "", "imageLink": ""}, {"id": 128, "title": "Clown (2014)", "year": "", "rating": "", "watchDate": "", "genre": "THRILLER", "note": "Seorang bapak memakai baju badut, tiba2 kostumnya menyatu dgn tubuhnya dan membuat dia menjadi pemakan anak kecil", "franchise": "BADUT", "watchLink": "", "imageLink": ""}, {"id": 129, "title": "Clown in a Cornfield (2025)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 130, "title": "The Forest Clown (2025)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 131, "title": "Apocalypse Clown (2023)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 132, "title": "The Boy, the Dog and the Clown (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 133, "title": "Clown (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 134, "title": "Clownery (2020)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 135, "title": "Clownface (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 136, "title": "ClownTown (2016)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 137, "title": "Clowntergeist (2017)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 138, "title": "IT (2017)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 139, "title": "IT Welcome To Derry\n2025", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 140, "title": "It Chapter Two\n2019", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 141, "title": "It Ends with Us\n2024", "year": "", "rating": "", "watchDate": "", "genre": "ROMANCE, DRAMA", "note": "perempuan yg tidak bisa mati lalu dia pacaran dgn seorang pria, kemudian putus lalu pria itu punya anak kemudian pacaran sama wanita yg tidak bisa mati tersebut", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 142, "title": "Dollhouse (2025)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Seorang ibu yg punya anak lalu ga sengaja meninggal karna di mesin cuci kemudian dia beli boneka sbg gantinya.\ntapi tak disangka bonekanya terkutuk dan hidup. kemudian cara mengatasinya menaruk kembali bonekanya di pulau tempat dia berada dulu", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 143, "title": "The Fast and the Furious (2001)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 144, "title": "2 Fast 2 Furious (2003", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 145, "title": "Fast & Furious (2009)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 146, "title": "Fast Five (2011)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 147, "title": "Fast & Furious 6 (Furious 6)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 148, "title": "The Fast and the Furious: Tokyo Drift (2006)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 149, "title": "Furious 7 (Furious Seven) (2015)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 150, "title": "The Fate of the Furious (2017)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 151, "title": "Fast & Furious Presents: Hobbs & Shaw (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 152, "title": "F9 Fast and Furious 9 : The Fast Saga (2021)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 153, "title": "Fast X (2023)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 154, "title": "Thir13en Ghosts (2001)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Kisah orang yg pindah rumah dgn banyak hantu di dalam rumah itu. total ada 13 hantu", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 155, "title": "Ghost Ship (2002)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 156, "title": "Dawn of the Dead (2004)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 157, "title": "One Missed Call 2 (Chakushin ari 2) (2005)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 158, "title": "EuroTrip (2004)", "year": "", "rating": "", "watchDate": "", "genre": "COMEDY", "note": "Petualangan konyol ke Euro, apalagi yg lucu momen miskusi di kereta", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 159, "title": "Meet the Robinsons (2007)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 160, "title": "Meatball Machine Kodoku (Kodoku: Mitoboru mashin) (2017)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 161, "title": "Spider-Man (2002)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 162, "title": "Spider-Man 2 (2004)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 163, "title": "Spider-Man 3 (2007)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 164, "title": "The Amazing Spider-Man (2012)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 165, "title": "The Amazing Spider-Man 2 (2014)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 166, "title": "Spider-Man: Homecoming (2017)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 167, "title": "Spider-Man: Into the Spider-Verse (2018)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 168, "title": "Spider-Man: Far from Home (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 169, "title": "Spider-Man: No Way Home (2021)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 170, "title": "Spider-Man: Across the Spider-Verse (2023)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 171, "title": "Justice League: Gods and Monsters (2015)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 172, "title": "Justice League vs. Teen Titans (2016)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 173, "title": "Justice League: Doom (2012)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 174, "title": "Justice League: Throne of Atlantis (2015)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 175, "title": "Justice League: The Flashpoint Paradox (2013)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 176, "title": "Justice League: War (2014)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 177, "title": "Justice League: Crisis on Two Earths (2010)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 178, "title": "Justice League Dark (2017)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 179, "title": "Justice League (2017)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 180, "title": "Justice League vs the Fatal Five (Justice League vs. the Fatal Five) (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 181, "title": "Justice League Dark: Apokolips War (2020)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 182, "title": "Zack Snyder's Justice League (2021)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 183, "title": "Justice League: Warworld (2023)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 184, "title": "Obsession (2026)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Film tentang pria yg suka sama nikki, kemudian si cowok itu membeli suatu lonceng yg bisa mengabulkan permintaan. permintaannya yaitu si cewek jadi suka kali sama si cowok. akibatnya dia tidak hanya suka, melainkan terobsesi tinggi", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 185, "title": "Avengers (2012)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "Vilain Loki dan Citauri.\n\nHero : Ironman, Thorn, Captain amerika, Black Widow, Hawkeye, Hulk. Baru bertemu", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 186, "title": "Iron Man (2008)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 187, "title": "Hulk (2003)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 188, "title": "The Incredible Hulk (2008)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 189, "title": "Hulk and the Agents of S.M.A.S.H. (2013)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 190, "title": "Planet Hulk (2010)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 191, "title": "Hulk: Where Monsters Dwell (2016)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 192, "title": "Hulk Vs. (2009)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 193, "title": "Iron Man & Hulk: Heroes United (2013)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 194, "title": "The Batman Superman Movie: World's Finest (1997)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 195, "title": "Superman (2025)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 196, "title": "My Adventures with Superman (2023)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 197, "title": "Batman and Superman: Battle of the Super Sons (2022)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 198, "title": "Superman dan Lois (Superman & Lois) (2021)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 199, "title": "Superman: Manusia Masa Depan (2020)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 200, "title": "Superman: Red Son (2020)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 201, "title": "The Death and Return of Superman (2019)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 202, "title": "The Death of Superman (2018)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 203, "title": "Superman IV: The Quest for Peace (1987)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 204, "title": "Superman III (1983)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 205, "title": "Superman vs. The Elite (2012)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 206, "title": "Superman: Unbound (2013)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 207, "title": "Superman (1978)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 208, "title": "Batman v Superman: Dawn of Justice (2016)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 209, "title": "All-Star Superman (2011)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 210, "title": "Superman II (1980)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 211, "title": "Superman: Brainiac Attacks (2006)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 212, "title": "Superman Returns (2006)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 213, "title": "Superman/Batman: Public Enemies (2009)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 214, "title": "Superman/Shazam!: The Return of Black Adam (2010)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 215, "title": "Superman/Doomsday (2007)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 216, "title": "Waiting for 'Superman' (2010)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}, {"id": 217, "title": "Superman/Batman: Apocalypse (2010)", "year": "", "rating": "", "watchDate": "", "genre": "", "note": "", "franchise": "", "watchLink": "", "imageLink": ""}];
+let films=initial.map(x=>({...x})), watched=new Set(JSON.parse(localStorage.getItem("filmMazWatched")||"[]"));
+let selected=null, activeGenre="";
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl=u=>/^https?:\/\//i.test(String(u||""))?String(u):"";
+function allGenres(){return [...new Set(films.flatMap(f=>(f.genre||"").split(",").map(x=>x.trim()).filter(Boolean)))].sort()}
+function posterStyle(f){let u=safeUrl(f.imageLink);return u?`background-image:url("${esc(u)}")`:""}
+function chooseHero(){
+ let f=films.find(x=>watched.has(x.id))||films[0]; if(!f)return;
+ $("hero").classList.toggle("hasimg",!!safeUrl(f.imageLink)); $("hero").style.backgroundImage=safeUrl(f.imageLink)?`linear-gradient(90deg,rgba(0,0,0,.75),transparent 75%),url("${f.imageLink}")`:"";
+ $("heroYear").textContent=f.year||"";
+ $("heroTitle").textContent=f.title;
+ $("heroMeta").textContent=[f.rating?"⭐ "+f.rating:"",f.genre].filter(Boolean).join("  •  ");
+ $("heroPlay").onclick=()=>f.watchLink?window.open(f.watchLink,"_blank"):openDetail(f.id);
 }
-
-let data = JSON.parse(
-    localStorage.getItem(STORAGE_KEY) || '[]'
-);
-
-function save() {
-    localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(data)
-    );
+function renderGenres(){
+ $("genres").innerHTML=`<button class="pill ${!activeGenre?"active":""}" onclick="setGenre('')">Semua</button>`+allGenres().map(g=>`<button class="pill ${activeGenre===g?"active":""}" onclick="setGenre('${esc(g)}')">${esc(g)}</button>`).join("");
 }
-function addMovie(){
-data.push({title:title.value,year:year.value,rating:rating.value,myrating:myrating.value,date:watchedDate.value,poster:poster.value,genre:genre.value,status:status.value,note:note.value,fav:false});
-save();render();
+function setGenre(g){activeGenre=g;renderGenres();renderLibrary()}
+function openDetail(id){
+ selected=id; let f=films.find(x=>x.id===id); if(!f)return;
+ $("detailPoster").style.backgroundImage=safeUrl(f.imageLink)?`url("${f.imageLink}")`:"linear-gradient(135deg,#333,#111)";
+ $("dTitle").textContent=f.title;
+ $("dMeta").textContent=[f.year?"Tahun "+f.year:"",f.rating?"⭐ Rating "+f.rating:"",f.watchDate?"🗓 "+f.watchDate:""].filter(Boolean).join("  •  ");
+ $("dGenres").innerHTML=(f.genre||"").split(",").filter(Boolean).map(g=>`<span class="tag">${esc(g.trim())}</span>`).join("");
+ $("dNote").textContent=f.note||"Belum ada catatan.";
+ $("dLinks").innerHTML=(f.watchLink?`<a href="${esc(f.watchLink)}" target="_blank" rel="noopener">▶ Tempat Nonton</a>`:"")+(f.imageLink?`<a href="${esc(f.imageLink)}" target="_blank" rel="noopener">🖼 Buka Gambar</a>`:"");
+ $("dEdit").onclick=()=>{detailDlg.close();openForm(f)};
+ detailDlg.showModal();
 }
-function delMovie(i){data.splice(i,1);save();render();}
-function editMovie(i){
-let m=data[i];
-title.value=m.title;year.value=m.year;rating.value=m.rating;myrating.value=m.myrating;
-watchedDate.value=m.date;poster.value=m.poster;genre.value=m.genre||'Action';status.value=m.status;note.value=m.note;
-data.splice(i,1);save();render();
+function renderNow(){
+ let list=[...films].filter(f=>watched.has(f.id)).slice(0,4);
+ if(!list.length)list=films.slice(0,4);
+ $("nowList").innerHTML=list.map(f=>`<div class="mini" onclick="openDetail(${f.id})"><div class="mini-poster" style="${posterStyle(f)}"></div><div class="mini-info"><div class="mini-title">${esc(f.title)}</div><div class="mini-meta">${f.year||""}${f.rating?" • ⭐ "+esc(f.rating):""}</div></div></div>`).join("");
 }
-function favMovie(i){data[i].fav=!data[i].fav;save();render();}
-function render(){
-let q=document.getElementById('searchMovie').value.toLowerCase();
-let fs=document.getElementById('filterStatus').value;
-let fg=document.getElementById('filterGenre').value;
-let arr=data.filter(m=>m.title.toLowerCase().includes(q));
-if(fs) arr=arr.filter(m=>m.status===fs);
-if(fg) arr=arr.filter(m=>m.genre===fg);
-movies.innerHTML=arr.map(m=>{
-let i=data.indexOf(m);
-return `<div class='movie'>
-<div class='poster'>${m.poster?`<img src="${m.poster}" style="width:100%;height:100%;object-fit:cover">`:'🎞️'}</div>
-<div class='info'>
-<h3>${m.fav?'⭐ ':''}${m.title}</h3>
-<p>📅 ${m.year||'-'} | ⭐ IMDb ${m.rating||'-'}</p>
-<p>❤️ ${m.myrating||'-'}/10</p>
-<p><span class='badge'>${m.status}</span></p><p>🎭 ${m.genre||'-'}</p>
-<p>🎬 ${m.date||'-'}</p>
-<p>${m.note||''}</p>
-<button onclick='favMovie(${i})'>⭐ Favorit</button>
-<button onclick='editMovie(${i})'>✏️ Edit</button>
-<button onclick='delMovie(${i})'>🗑️ Hapus</button>
-</div></div>`}).join('');
+function renderTrending(){
+ let list=films.slice(0,14);
+ $("trending").innerHTML=list.map(f=>`<div class="poster-card" onclick="openDetail(${f.id})"><div class="poster-img" style="${posterStyle(f)}"></div><div class="poster-year">${esc(f.year||"—")}</div><div class="poster-title">${esc(f.title)}</div></div>`).join("");
 }
+function renderLibrary(){
+ let q=$("search").value.toLowerCase(), st=$("status").value;
+ let a=films.filter(f=>(f.title+" "+f.note+" "+f.franchise+" "+f.genre).toLowerCase().includes(q)&&(!activeGenre||(f.genre||"").split(",").map(x=>x.trim()).includes(activeGenre))&&(!st||(st==="watched"?watched.has(f.id):!watched.has(f.id))));
+ let sort=$("sort").value;a.sort((x,y)=>sort==="az"?x.title.localeCompare(y.title):sort==="za"?y.title.localeCompare(x.title):sort==="year"?(Number(y.year)||0)-(Number(x.year)||0):(Number(y.rating)||0)-(Number(x.rating)||0));
+ $("count").textContent=a.length+" film";
+ $("library").innerHTML=a.length?a.map(f=>`<div class="rowcard" onclick="openDetail(${f.id})"><div class="rowtitle">${esc(f.title)}</div><div class="rowmeta">${f.year||"Tahun—"} ${f.rating?"• ⭐ "+esc(f.rating):""} ${watched.has(f.id)?"• ✓ Ditonton":""}</div>${(f.genre||"").split(",").slice(0,3).filter(Boolean).map(g=>`<span class="tag">${esc(g.trim())}</span>`).join("")}</div>`).join(""):`<div class="empty">Film tidak ditemukan.</div>`;
+}
+function render(){renderGenres();renderNow();renderTrending();renderLibrary();chooseHero()}
+function openForm(f=null){
+ $("formTitle").textContent=f?"Edit Film":"Tambah Film";
+ $("fTitle").value=f?.title||"";$("fYear").value=f?.year||"";$("fRating").value=f?.rating||"";$("fGenre").value=f?.genre||"";$("fWatchDate").value=f?.watchDate||"";$("fWatchLink").value=f?.watchLink||"";$("fImageLink").value=f?.imageLink||"";$("fFranchise").value=f?.franchise||"";$("fNote").value=f?.note||"";
+ $("filmForm").dataset.id=f?.id||"";formDlg.showModal();
+}
+$("filmForm").onsubmit=e=>{e.preventDefault();let id=Number(e.target.dataset.id), x={id:id||Math.max(0,...films.map(f=>f.id))+1,title:$("fTitle").value.trim(),year:$("fYear").value,rating:$("fRating").value,genre:$("fGenre").value,watchDate:$("fWatchDate").value,watchLink:$("fWatchLink").value.trim(),imageLink:$("fImageLink").value.trim(),franchise:$("fFranchise").value,note:$("fNote").value};films=id?films.map(f=>f.id===id?x:f):[...films,x];formDlg.close();render()};
+$("add").onclick=()=>openForm();
+["search","status","sort"].forEach(id=>$(id).oninput=renderLibrary);
+$("bgFile").onchange=e=>{let file=e.target.files[0];if(!file)return;let reader=new FileReader();reader.onload=()=>{document.body.style.setProperty("--custom-bg",`url("${reader.result}")`);document.body.classList.add("custom-bg");localStorage.setItem("filmMazBg",reader.result)};reader.readAsDataURL(file)};
+$("resetBg").onclick=()=>{document.body.classList.remove("custom-bg");document.body.style.removeProperty("--custom-bg");localStorage.removeItem("filmMazBg")};
+let savedBg=localStorage.getItem("filmMazBg");if(savedBg){document.body.style.setProperty("--custom-bg",`url("${savedBg}")`);document.body.classList.add("custom-bg")}
 render();
-
-const BG_KEY='film_bg';
-const CURSOR_KEY='film_cursor';
-
-function applySavedAppearance(){
- const bg=localStorage.getItem(BG_KEY);
- if(bg){
-  document.body.style.backgroundImage=`url(${bg})`;
-  document.body.style.backgroundSize='cover';
-  document.body.style.backgroundAttachment='fixed';
- }
- const cur=localStorage.getItem(CURSOR_KEY);
- if(cur){document.body.style.cursor=`url(${cur}), auto`;}
-}
-function setBackground(){
- const url=document.getElementById('bgUrl').value.trim();
- const file=document.getElementById('bgFile').files[0];
- if(file){
-  const r=new FileReader();
-  r.onload=e=>{
-   localStorage.setItem(BG_KEY,e.target.result);
-   applySavedAppearance();
-  };
-  r.readAsDataURL(file);
- }else if(url){
-  localStorage.setItem(BG_KEY,url);
-  applySavedAppearance();
- }
-}
-function resetBackground(){
- localStorage.removeItem(BG_KEY);
- document.body.style.backgroundImage='none';
-}
-function setCursor(){
- const url=document.getElementById('cursorUrl').value.trim();
- const file=document.getElementById('cursorFile').files[0];
- if(file){
-  const r=new FileReader();
-  r.onload=e=>{
-   localStorage.setItem(CURSOR_KEY,e.target.result);
-   applySavedAppearance();
-  };
-  r.readAsDataURL(file);
- }else if(url){
-  localStorage.setItem(CURSOR_KEY,url);
-  applySavedAppearance();
- }
-}
-function resetCursor(){
- localStorage.removeItem(CURSOR_KEY);
- document.body.style.cursor='auto';
-}
-applySavedAppearance();
-
 </script></body></html>
